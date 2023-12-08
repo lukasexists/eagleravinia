@@ -228,11 +228,11 @@ export async function onConnect(client) {
         await new Promise((res) => setTimeout(res, 2000));
         sendCustomMessage(client.gameClient, "What would you like to do?", "gray");
         sendChatComponent(client.gameClient, {
-            text: "1) ",
+            text: "[1: ONLINE] ",
             color: "gold",
             extra: [
                 {
-                    text: "Connect to an online server (Minecraft account needed)",
+                    text: "Minecraft account needed",
                     color: "white",
                 },
             ],
@@ -246,11 +246,11 @@ export async function onConnect(client) {
             },
         });
         sendChatComponent(client.gameClient, {
-            text: "2) ",
+            text: "[2: OFFLINE/RAVINIA] ",
             color: "gold",
             extra: [
                 {
-                    text: "Connect to an offline server (no Minecraft account needed)",
+                    text: "For offline/cracked server",
                     color: "white",
                 },
             ],
@@ -264,11 +264,11 @@ export async function onConnect(client) {
             },
         });
         sendChatComponent(client.gameClient, {
-            text: "3) ",
+            text: "[3: EASYMC] ",
             color: "gold",
             extra: [
                 {
-                    text: "Connect to an online server via EasyMC account pool (no Minecraft account needed)",
+                    text: "Connect to an online server via EasyMC account pool",
                     color: "white",
                 },
             ],
