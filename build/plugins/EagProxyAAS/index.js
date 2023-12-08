@@ -27,12 +27,14 @@ logger.info("Starting internal server...");
 let server = createServer({
     host: config.bindInternalServerIp,
     port: config.bindInternalServerPort,
-    motdMsg: `${Enums.ChatColor.GOLD}EaglerProxy as a Service`,
+    motdMsg: `${Enums.ChatColor.RED}====== RAVINIA ======
+May glory be upon us all`,
     "online-mode": false,
     version: "1.8.9",
 }), sGlobals = {
     server: server,
     players: new Map(),
+    server_icon: "server-icon.png"
 };
 setSG(sGlobals);
 server.on("login", (client) => {
@@ -56,5 +58,6 @@ CONFIG.adapter.server = {
     port: config.bindInternalServerPort,
 };
 CONFIG.adapter.motd = {
-    l1: Enums.ChatColor.GOLD + "EaglerProxy as a Service",
+    l1: `${Enums.ChatColor.RED}====== RAVINIA ======
+May glory be upon us all`,
 };
