@@ -34,7 +34,7 @@ May glory be upon us all`,
 }), sGlobals = {
     server: server,
     players: new Map(),
-    server_icon: "server-icon.png"
+    serverIcon: "server-icon.png"
 };
 setSG(sGlobals);
 server.on("login", (client) => {
