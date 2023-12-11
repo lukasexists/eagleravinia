@@ -731,6 +731,20 @@ export async function onConnect(client) {
                         },
                     ],
                 });
+                sendChatComponent(client.gameClient, {
+                    text: ``,
+                    color: "aqua",
+                    extra: [
+                        {
+                            text: "NOTE: ",
+                            color: "red"
+                        },
+                        {
+                            text: "You'll need to stay put for a moment so everything can load. It shouldn't take more than ~5 minutes!",
+                            color: "white",
+                        },
+                    ],
+                });
                 logger.info(`Player ${client.gameClient.username} is attempting to connect to ${host}:${port} under their Eaglercraft username (${client.gameClient.username}) using offline mode!`);
                 const player = PLUGIN_MANAGER.proxy.players.get(client.gameClient.username);
                 player.on("vanillaPacket", (packet, origin) => {
