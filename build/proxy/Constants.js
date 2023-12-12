@@ -36,7 +36,12 @@ window.addEventListener('load', () => {
 <body> 
 <div class="content">
 <h1>Deadly</h1> 
-<p>Welcome to the Deadly home page! To connect, use this server IP/URL: <code id="connect-url">loading...</code> (connect from any 1.8 EaglercraftX client via Multiplayer > Direct Connect!)</p> 
+<p>
+Welcome to the Deadly home page! 
+Deadly is a 1.8.9 Eaglercraft SMP with plugins to make survival more difficult and unique. 
+The sun is deadly, the firearms are ready and the chickens want blood!
+</p> 
+<h2>Play at <code>wss://deadly.owouw.us/</code></h2>
 <p>Ravinia SMP members must message an admin to enter the SMP world.</p>
 </div>
 </body>
