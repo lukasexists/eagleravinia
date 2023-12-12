@@ -13,14 +13,15 @@ export var Constants;
     Constants.PLAYER_LOOK_PACKET = 0x08;
 })(Constants || (Constants = {}));
 export const UPGRADE_REQUIRED_RESPONSE = `<!DOCTYPE html>
-<!-- Served by ${meta.PROXY_BRANDING} (version: ${meta.PROXY_VERSION}) -->
+<!-- Deadly SMP uses a fork of Eaglerproxy v${meta.PROXY_VERSION}. Learn more about EaglerProxy at https://github.com/WorldEditAxe/eaglerproxy, and learn more about Eaglercraft at https://eaglercraft.com/ -->
 <html> 
 <head> 
 <title>Deadly</title> 
 <style> 
 :root { font-family: "Arial" } 
-body { background-color: #000; color: #eee; }
-code { padding: 3px 10px 3px 10px; border-radius: 5px; font-family: monospace; background-color: #1a1a1a; color: white; } 
+body { background-color: #000; color: #eee; text-align: center; }
+.content { max-width: 480px; width: 100%; min-height: 100vh; background-color: #111; }
+code { padding: 3px 10px 3px 10px; border-radius: 5px; font-family: monospace; background-color: #222; color: white; } 
 </style> 
 
 <script type="text/javascript"> 
@@ -31,8 +32,10 @@ window.addEventListener('load', () => {
 </head> 
 
 <body> 
+<div class="content">
 <h1>Deadly</h1> 
 <p>Welcome to the Deadly home page! To connect, use this server IP/URL: <code id="connect-url">loading...</code> (connect from any 1.8 EaglercraftX client via Multiplayer > Direct Connect!)</p> 
 <p>Ravinia SMP members must message an admin to enter the SMP world.</p>
+</div>
 </body>
 </html>`;
