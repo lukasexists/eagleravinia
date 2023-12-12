@@ -19,8 +19,8 @@ export const UPGRADE_REQUIRED_RESPONSE = `<!DOCTYPE html>
 <title>Deadly</title> 
 <style> 
 :root { font-family: "Arial" } 
-body { background-color: #000; color: #eee; text-align: center; }
-.content { max-width: 480px; width: 100%; min-height: 100vh; background-color: #111; }
+body { background-color: #FDEDEA; color: #eee; text-align: center; padding: 0; margin: 0; }
+.content { max-width: 480px; width: 100%; min-height: 100vh; background-color: #FFDEDD; padding: 12px; box-sizing: border-box; }
 code { padding: 3px 10px 3px 10px; border-radius: 5px; font-family: monospace; background-color: #222; color: white; } 
 </style> 
 
