@@ -21,7 +21,7 @@ export const UPGRADE_REQUIRED_RESPONSE = `<!DOCTYPE html>
 @import url('https://fontlay.com/css2?family=Roboto+Flex&family=Rubik+Marker+Hatch&display=swap');
 
 h1 { font-family: "Rubik Marker Hatch", Impact, Arial, sans-serif; font-size: 48px; } 
-body { background-color: #150909; color: #eee; text-align: center; padding: 0; margin: 0; font-family: 'Roboto Flex', 'Roboto', Arial, sans-serif; }
+body { background-color: #150909; background: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px, yellow 10px, yellow 20px); color: #eee; text-align: center; padding: 0; margin: 0; font-family: 'Roboto Flex', 'Roboto', Arial, sans-serif; }
 .content { max-width: 480px; width: 100%; min-height: 100vh; background-color: #1F0A0A; padding: 12px; box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%) }
 code { padding: 3px 10px 3px 10px; border-radius: 5px; font-family: monospace; background-color: #222; color: white; } 
 </style> 
@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
 
 <body> 
 <div class="content">
-<h1>Hazardcraft</h1> 
+<h1>Hazard&shy;craft</h1> 
 <p>
 Hazardcraft is a 1.8.9 Eaglercraft SMP that takes place on the highly-hazardous C-814 planet.
 The sun is hazardous to humans, and the animals are highly aggressive hunters.
