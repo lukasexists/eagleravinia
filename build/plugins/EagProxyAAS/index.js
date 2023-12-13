@@ -29,7 +29,7 @@ let server = createServer({
     port: config.bindInternalServerPort,
     motdMsg: `${Enums.ChatColor.RED}====== RAVINIA ======
 May glory be upon us all`,
-    favicon: fs.readFileSync(path.join(__dirname, "server-icon.png")),
+    favicon: readFileSync(path.join(__dirname, "server-icon.png")),
     "online-mode": false,
     version: "1.8.9",
 }), sGlobals = {
