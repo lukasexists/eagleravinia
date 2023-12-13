@@ -76,7 +76,7 @@ export function handleConnect(client) {
   });
   client.gameClient.write("playerlist_header", {
     header: JSON.stringify({
-      text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+      text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
     }),
     footer: JSON.stringify({
       text: `${Enums.ChatColor.GOLD}Please wait for instructions.`,
@@ -180,7 +180,7 @@ export function updateState(client, newState, uri, code) {
     case "CONNECTION_TYPE":
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
         }),
         footer: JSON.stringify({
           text: `${Enums.ChatColor.RED}Choose the connection type: 1 = online, 2 = offline, 3 = EasyMC.`,
@@ -190,7 +190,7 @@ export function updateState(client, newState, uri, code) {
     case "AUTH_EASYMC":
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
         }),
         footer: JSON.stringify({
           text: `${Enums.ChatColor.RED}easymc.io/get${Enums.ChatColor.GOLD} | ${Enums.ChatColor.RED}/login <alt_token>`,
@@ -204,7 +204,7 @@ export function updateState(client, newState, uri, code) {
         );
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
         }),
         footer: JSON.stringify({
           text: `${Enums.ChatColor.RED}${uri}${Enums.ChatColor.GOLD} | Code: ${Enums.ChatColor.RED}${code}`,
@@ -214,12 +214,10 @@ export function updateState(client, newState, uri, code) {
     case "SERVER":
       client.write("playerlist_header", {
         header: JSON.stringify({
-          text: ` ${Enums.ChatColor.GOLD}EaglerProxy Authentication Server `,
+          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
         }),
         footer: JSON.stringify({
-          text: `${Enums.ChatColor.RED}/join <ip>${
-            config.allowCustomPorts ? " [port]" : ""
-          }`,
+          text: `${Enums.ChatColor.RED}Powered by EaglerProxy`,
         }),
       });
       break;
