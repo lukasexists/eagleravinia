@@ -35,14 +35,18 @@ window.addEventListener('load', () => {
 
 <body> 
 <div class="content">
+
 <h1>Hazard&shy;craft</h1> 
+
 <p>
 Hazardcraft is a 1.8.9 Eaglercraft SMP that takes place on the highly-hazardous C-814 planet.
 The sun is hazardous to humans, and the animals are highly aggressive hunters.
 </p> 
 <h2>Play at <code>wss://hazard.owouw.us/</code></h2>
 <p>Ravinia SMP members must message an admin to enter the SMP world.</p>
+
 <h2>Addon List</h2>
+
 <ul>
 <li>AuthMe obviously</li>
 <li>Quality Armory</li>
@@ -56,6 +60,7 @@ The sun is hazardous to humans, and the animals are highly aggressive hunters.
 <li>DeathCoordinates</li>
 <li>Multiworld</li>
 </ul>
+
 </div>
 </body>
 </html>`;
