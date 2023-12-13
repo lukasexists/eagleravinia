@@ -13,10 +13,10 @@ export var Constants;
     Constants.PLAYER_LOOK_PACKET = 0x08;
 })(Constants || (Constants = {}));
 export const UPGRADE_REQUIRED_RESPONSE = `<!DOCTYPE html>
-<!-- Deadly SMP uses a fork of Eaglerproxy v1.0.8. Learn more about EaglerProxy at https://github.com/WorldEditAxe/eaglerproxy, and learn more about Eaglercraft at https://eaglercraft.com/ -->
+<!-- Hazardraft uses a fork of Eaglerproxy v1.0.8. Learn more about EaglerProxy at https://github.com/WorldEditAxe/eaglerproxy, and learn more about Eaglercraft at https://eaglercraft.com/ -->
 <html> 
 <head> 
-<title>Deadly</title> 
+<title>Hazardcraft</title> 
 <style> 
 @import url('https://fontlay.com/css2?family=Roboto+Flex&family=Rubik+Marker+Hatch&display=swap');
 
@@ -35,14 +35,27 @@ window.addEventListener('load', () => {
 
 <body> 
 <div class="content">
-<h1>Deadly</h1> 
+<h1>Hazardcraft</h1> 
 <p>
-Welcome to the Deadly home page! 
-Deadly is a 1.8.9 Eaglercraft SMP with plugins to make survival more difficult and unique. 
-The sun is deadly, the firearms are ready and the chickens want blood!
+Hazardcraft is a 1.8.9 Eaglercraft SMP that takes place on the highly-hazardous C-814 planet.
+The sun is hazardous to humans, and the animals are highly aggressive hunters.
 </p> 
 <h2>Play at <code>wss://deadly.owouw.us/</code></h2>
 <p>Ravinia SMP members must message an admin to enter the SMP world.</p>
+<h2>Addon List</h2>
+<ul>
+<li>AuthMe obviously</li>
+<li>Quality Armory</li>
+<li>Gringotts Economy</li>
+<li>Deadly Sun</li>
+<li>Aggressive Animals (the old version)</li>
+<li>HoloMobHealth</li>
+<li>CreeperRefund</li>
+<li>TSkullDrops</li>
+<li>EssentialsX</li>
+<li>DeathCoordinates</li>
+<li>Multiworld</li>
+</ul>
 </div>
 </body>
 </html>`;
