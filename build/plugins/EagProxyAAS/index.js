@@ -60,6 +60,6 @@ CONFIG.adapter.server = {
     port: config.bindInternalServerPort,
 };
 CONFIG.adapter.motd = {
-    l1: `${Enums.ChatColor.RED}====== RAVINIA ======
-May glory be upon us all`,
+    l1: `${Enums.ChatColor.RED}====== ${Enums.ChatColor.YELLOW}HAZARDCRAFT ${Enums.ChatColor.RED}======
+The most dangerous Eaglercraft server`,
 };
