@@ -28,8 +28,8 @@ logger.info("Starting internal server...");
 let server = createServer({
     host: config.bindInternalServerIp,
     port: config.bindInternalServerPort,
-    motdMsg: `${Enums.ChatColor.RED}====== RAVINIA ======
-May glory be upon us all`,
+    motdMsg: `${Enums.ChatColor.RED}====== ${Enums.ChatColor.YELLOW}HAZARDCRAFT ${Enums.ChatColor.RED}======
+The most dangerous Eaglercraft server`,
     favicon: readFileSync(path.join(__dirname, "server-icon.png")),
     "online-mode": false,
     version: "1.8.9",
