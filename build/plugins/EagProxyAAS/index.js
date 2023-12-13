@@ -4,7 +4,7 @@ import { ConnectionState } from "./types.js";
 import { handleConnect, hushConsole, setSG } from "./utils.js";
 import path from "path";
 import { readFileSync } from "fs";
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = path.dirname(process.argv[1])
 const PluginManager = PLUGIN_MANAGER;
 const metadata = JSON.parse(readFileSync(process.platform == "win32"
     ? path
