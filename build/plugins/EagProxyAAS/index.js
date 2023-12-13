@@ -4,6 +4,7 @@ import { ConnectionState } from "./types.js";
 import { handleConnect, hushConsole, setSG } from "./utils.js";
 import path from "path";
 import { readFileSync } from "fs";
+const __dirname = path.dirname(process.argv[1])
 const PluginManager = PLUGIN_MANAGER;
 const metadata = JSON.parse(readFileSync(process.platform == "win32"
     ? path
@@ -27,8 +28,9 @@ logger.info("Starting internal server...");
 let server = createServer({
     host: config.bindInternalServerIp,
     port: config.bindInternalServerPort,
-    motdMsg: `${Enums.ChatColor.RED}====== RAVINIA ======
-May glory be upon us all`,
+    motdMsg: `${Enums.ChatColor.RED}====== ${Enums.ChatColor.YELLOW}HAZARDCRAFT ${Enums.ChatColor.RED}======
+The most dangerous Eaglercraft server`,
+    favicon: readFileSync(path.join(__dirname, "server-icon.png")),
     "online-mode": false,
     version: "1.8.9",
 }), sGlobals = {
@@ -58,6 +60,6 @@ CONFIG.adapter.server = {
     port: config.bindInternalServerPort,
 };
 CONFIG.adapter.motd = {
-    l1: `${Enums.ChatColor.RED}====== RAVINIA ======
-May glory be upon us all`,
+    l1: `${Enums.ChatColor.RED}====== ${Enums.ChatColor.YELLOW}HAZARDCRAFT ${Enums.ChatColor.RED}======
+The most dangerous Eaglercraft server`,
 };

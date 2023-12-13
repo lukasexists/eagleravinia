@@ -240,14 +240,10 @@ export async function onConnect(client) {
   try {
     client.state = ConnectionState.AUTH;
     client.lastStatusUpdate = Date.now();
-    sendMessageWarning(
-      client.gameClient,
-      `WARNING: This proxy allows you to connect to any 1.8.9 server. Gameplay has shown no major issues, but please note that EaglercraftX may flag some anticheats while playing.`
-    );
     await new Promise((res) => setTimeout(res, 2000));
     sendMessageWarning(
       client.gameClient,
-      `WARNING: It is highly suggested that you turn down settings, as gameplay tends to be very laggy and unplayable on low powered devices.`
+      `WARNING: If you're on a Chromebook please turn down the graphics all the way or use Shadow! We aren't helping with client performance issues - Eaglercraft is just usually laggy!`
     );
     await new Promise((res) => setTimeout(res, 2000));
 
@@ -262,8 +258,8 @@ export async function onConnect(client) {
 
     try {
       sendChatComponent(client.gameClient, {
-        text: `Joining Ravinia - welcome, ${client.gameClient.username}! Run `,
-        color: "aqua",
+        text: `Joining Hazardcraft - welcome, ${client.gameClient.username}! Run `,
+        color: "yellow",
         extra: [
           {
             text: "/eag-help",

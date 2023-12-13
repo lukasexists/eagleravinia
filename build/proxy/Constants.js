@@ -13,15 +13,15 @@ export var Constants;
     Constants.PLAYER_LOOK_PACKET = 0x08;
 })(Constants || (Constants = {}));
 export const UPGRADE_REQUIRED_RESPONSE = `<!DOCTYPE html>
-<!-- Deadly SMP uses a fork of Eaglerproxy v1.0.8. Learn more about EaglerProxy at https://github.com/WorldEditAxe/eaglerproxy, and learn more about Eaglercraft at https://eaglercraft.com/ -->
+<!-- Hazardraft uses a fork of Eaglerproxy v1.0.8. Learn more about EaglerProxy at https://github.com/WorldEditAxe/eaglerproxy, and learn more about Eaglercraft at https://eaglercraft.com/ -->
 <html> 
 <head> 
-<title>Deadly</title> 
+<title>Hazardcraft</title> 
 <style> 
 @import url('https://fontlay.com/css2?family=Roboto+Flex&family=Rubik+Marker+Hatch&display=swap');
 
 h1 { font-family: "Rubik Marker Hatch", Impact, Arial, sans-serif; font-size: 48px; } 
-body { background-color: #150909; color: #eee; text-align: center; padding: 0; margin: 0; font-family: 'Roboto Flex', 'Roboto', Arial, sans-serif; }
+body { background-color: #150909; background: repeating-linear-gradient(45deg, #150909 0px, #150909 10px, #150909 10px, #3b370d 10px, #3b370d 20px); color: #eee; text-align: center; padding: 0; margin: 0; font-family: 'Roboto Flex', 'Roboto', Arial, sans-serif; }
 .content { max-width: 480px; width: 100%; min-height: 100vh; background-color: #1F0A0A; padding: 12px; box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%) }
 code { padding: 3px 10px 3px 10px; border-radius: 5px; font-family: monospace; background-color: #222; color: white; } 
 </style> 
@@ -35,9 +35,27 @@ window.addEventListener('load', () => {
 
 <body> 
 <div class="content">
-<h1>Deadly</h1> 
-<p>Welcome to the Deadly home page! To connect, use this server IP/URL: <code id="connect-url">loading...</code> (connect from any 1.8 EaglercraftX client via Multiplayer > Direct Connect!)</p> 
+<h1>Hazard&shy;craft</h1> 
+<p>
+Hazardcraft is a 1.8.9 Eaglercraft SMP that takes place on the highly-hazardous C-814 planet.
+The sun is hazardous to humans, and the animals are highly aggressive hunters.
+</p> 
+<h2>Play at <code>wss://hazard.owouw.us/</code></h2>
 <p>Ravinia SMP members must message an admin to enter the SMP world.</p>
+<h2>Addon List</h2>
+<ul>
+<li>AuthMe obviously</li>
+<li>Quality Armory</li>
+<li>Gringotts Economy</li>
+<li>Deadly Sun</li>
+<li>Aggressive Animals (the old version)</li>
+<li>HoloMobHealth</li>
+<li>CreeperRefund</li>
+<li>TSkullDrops</li>
+<li>EssentialsX</li>
+<li>DeathCoordinates</li>
+<li>Multiworld</li>
+</ul>
 </div>
 </body>
 </html>`;
