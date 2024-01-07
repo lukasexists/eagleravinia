@@ -178,7 +178,10 @@ export function updateState(client, newState, uri, code) {
   client.write("playerlist_header", {
     header: JSON.stringify({
       text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
-    })
+    }),
+    footer: JSON.stringify({
+      text: ``,
+    }),
   });
 }
 // assuming that the player will always stay at the same pos
@@ -272,7 +275,7 @@ export async function onConnect(client) {
         if (err.code.contains("ENOTFOUND") || err.code.contains("ECONNREFUSED")) {
           client.gameClient.end(
             Enums.ChatColor.RED +
-              `It looks like the servers are down! Try agian later!`
+              `It looks like the servers are down! Try again later!`
           );
         } else {
           client.gameClient.end(
