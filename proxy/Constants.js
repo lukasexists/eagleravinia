@@ -48,7 +48,7 @@ The sun is hazardous to humans, and the animals are highly aggressive hunters.
 <h2>Addon List</h2>
 
 <ul>
-<li>AuthMe obviously</li>
+<li>AuthMe</li>
 <li>Quality Armory</li>
 <li>Gringotts Economy</li>
 <li>Deadly Sun</li>
@@ -59,6 +59,10 @@ The sun is hazardous to humans, and the animals are highly aggressive hunters.
 <li>EssentialsX</li>
 <li>DeathCoordinates</li>
 <li>Multiworld</li>
+<li>TAB</li>
+<li>ProximityChat</li>
+<li>Horizon Anticheat</li>
+<li>AntiLag</li>
 </ul>
 
 </div>
