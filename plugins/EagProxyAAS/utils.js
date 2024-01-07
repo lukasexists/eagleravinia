@@ -7,7 +7,6 @@ import { ConnectionState } from "./types.js";
 import { auth } from "./auth.js";
 import { config } from "./config.js";
 import { handleCommand } from "./commands.js";
-import { getTokenProfileEasyMc } from "./auth_easymc.js";
 const { Vec3 } = vec3;
 const Enums = PLUGIN_MANAGER.Enums;
 const Util = PLUGIN_MANAGER.Util;
@@ -79,7 +78,7 @@ export function handleConnect(client) {
       text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
     }),
     footer: JSON.stringify({
-      text: `${Enums.ChatColor.GOLD}Please wait for instructions.`,
+      text: `${Enums.ChatColor.GOLD}Please wait...`,
     }),
   });
   onConnect(client);
@@ -176,52 +175,14 @@ export function sendMessageLogin(client, url, token) {
   });
 }
 export function updateState(client, newState, uri, code) {
-  switch (newState) {
-    case "CONNECTION_TYPE":
-      client.write("playerlist_header", {
-        header: JSON.stringify({
-          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
-        }),
-        footer: JSON.stringify({
-          text: `${Enums.ChatColor.RED}Choose the connection type: 1 = online, 2 = offline, 3 = EasyMC.`,
-        }),
-      });
-      break;
-    case "AUTH_EASYMC":
-      client.write("playerlist_header", {
-        header: JSON.stringify({
-          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
-        }),
-        footer: JSON.stringify({
-          text: `${Enums.ChatColor.RED}easymc.io/get${Enums.ChatColor.GOLD} | ${Enums.ChatColor.RED}/login <alt_token>`,
-        }),
-      });
-      break;
-    case "AUTH":
-      if (code == null || uri == null)
-        throw new Error(
-          "Missing code/uri required for title message type AUTH"
-        );
-      client.write("playerlist_header", {
-        header: JSON.stringify({
-          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
-        }),
-        footer: JSON.stringify({
-          text: `${Enums.ChatColor.RED}${uri}${Enums.ChatColor.GOLD} | Code: ${Enums.ChatColor.RED}${code}`,
-        }),
-      });
-      break;
-    case "SERVER":
-      client.write("playerlist_header", {
-        header: JSON.stringify({
-          text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
-        }),
-        footer: JSON.stringify({
-          text: `${Enums.ChatColor.RED}Powered by EaglerProxy`,
-        }),
-      });
-      break;
-  }
+  client.write("playerlist_header", {
+    header: JSON.stringify({
+      text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
+    }),
+    footer: JSON.stringify({
+      text: `${Enums.ChatColor.RED}Powered by EaglerProxy`,
+    }),
+  });
 }
 // assuming that the player will always stay at the same pos
 export function playSelectSound(client) {
@@ -241,7 +202,12 @@ export async function onConnect(client) {
     await new Promise((res) => setTimeout(res, 2000));
     sendMessageWarning(
       client.gameClient,
-      `WARNING: If you're on a Chromebook please turn down the graphics all the way or use Shadow! We aren't helping with client performance issues - Eaglercraft is just usually laggy!`
+      `WARNING: If you're on a Chromebook please turn down the graphics (specifically render distance)! We cannot help with client performance issues - Eaglercraft just tends to be laggy!`
+    );
+    await new Promise((res) => setTimeout(res, 2000));
+    sendMessageWarning(
+      client.gameClient,
+      `WARNING: If you're on bad internet, you'll need to stay put for a moment so everything can load. Just wait until the login messages pop up!`
     );
     await new Promise((res) => setTimeout(res, 2000));
 
@@ -260,22 +226,6 @@ export async function onConnect(client) {
         color: "yellow",
         extra: [
           {
-            text: "/eag-help",
-            color: "gold",
-            hoverEvent: {
-              action: "show_text",
-              value: Enums.ChatColor.GOLD + "Click me to run this command!",
-            },
-            clickEvent: {
-              action: "run_command",
-              value: "/eag-help",
-            },
-          },
-          {
-            text: " for a list of proxy commands, and ",
-            color: "aqua",
-          },
-          {
             text: "/help",
             color: "gold",
             hoverEvent: {
@@ -293,27 +243,13 @@ export async function onConnect(client) {
           },
         ],
       });
-      sendChatComponent(client.gameClient, {
-        text: ``,
-        color: "aqua",
-        extra: [
-          {
-            text: "NOTE: ",
-            color: "red",
-          },
-          {
-            text: "You'll need to stay put for a moment so everything can load. It might put you under the ground during this time - don't worry about it! It shouldn't take more than ~5 minutes!",
-            color: "white",
-          },
-        ],
-      });
       logger.info(
-        `Player ${client.gameClient.username} is attempting to connect to ${host}:${port} under their Eaglercraft username (${client.gameClient.username}) using offline mode!`
+        `Player ${client.gameClient.username} is attempting to connect!`
       );
       const player = PLUGIN_MANAGER.proxy.players.get(
         client.gameClient.username
       );
-      player.on("vanillaPacket", (packet, origin) => {
+      /*player.on("vanillaPacket", (packet, origin) => {
         if (
           origin == "CLIENT" &&
           packet.name == "chat" &&
@@ -323,7 +259,7 @@ export async function onConnect(client) {
           packet.cancel = true;
           handleCommand(player, packet.params.message);
         }
-      });
+      });*/
       await player.switchServers({
         host: host,
         port: port,
@@ -336,16 +272,17 @@ export async function onConnect(client) {
       });
     } catch (err) {
       if (!client.gameClient.ended) {
-        client.gameClient.end(
-          Enums.ChatColor.RED +
-            `Something went wrong whilst switching servers: ${err.message}${
-              err.code == "ENOTFOUND"
-                ? host.includes(":")
-                  ? `\n${Enums.ChatColor.GRAY}Suggestion: Replace the : in your IP with a space.`
-                  : "\nIs that IP valid?"
-                : ""
-            }`
-        );
+        if (err.code.contains("ENOTFOUND") || err.code.contains("ECONNREFUSED")) {
+          client.gameClient.end(
+            Enums.ChatColor.RED +
+              `It looks like the servers are down! Try agian later!`
+          );
+        } else {
+          client.gameClient.end(
+            Enums.ChatColor.RED +
+              `Something went wrong while we were connecting you! ${err.message}`
+          );
+        }
       }
     }
   } catch (err) {
@@ -357,7 +294,7 @@ export async function onConnect(client) {
       );
       client.gameClient.end(
         Enums.ChatColor.YELLOW +
-          "Something went wrong whilst processing your request. Please reconnect."
+          "Whoops, something went wrong while we were connecting you! Please reconnect!"
       );
     }
   }

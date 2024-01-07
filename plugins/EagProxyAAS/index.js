@@ -36,7 +36,7 @@ The most dangerous Eaglercraft server`,
 }), sGlobals = {
     server: server,
     players: new Map(),
-    serverIcon: "logo.png"
+    serverIcon: readFileSync(path.join(__dirname, "logo.png"))
 };
 setSG(sGlobals);
 server.on("login", (client) => {
