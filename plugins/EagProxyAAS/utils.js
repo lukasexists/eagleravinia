@@ -178,10 +178,7 @@ export function updateState(client, newState, uri, code) {
   client.write("playerlist_header", {
     header: JSON.stringify({
       text: ` ${Enums.ChatColor.RED}Hazard${Enums.ChatColor.YELLOW}Craft `,
-    }),
-    footer: JSON.stringify({
-      text: `${Enums.ChatColor.RED}Powered by EaglerProxy`,
-    }),
+    })
   });
 }
 // assuming that the player will always stay at the same pos
