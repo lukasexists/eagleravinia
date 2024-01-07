@@ -241,7 +241,7 @@ export class Player extends EventEmitter {
             client.on("error", errListener);
             client.on("end", (reason) => {
                 if (!this._switchingServers && !switchingServers) {
-                    this.disconnect(this._kickMessage ?? reason);
+                    this.disconnect(this._kickMessage ?? reason ?? "No reason given");
                 }
                 this.ws.removeListener("message", listener);
             });

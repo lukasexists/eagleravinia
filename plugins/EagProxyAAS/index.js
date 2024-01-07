@@ -30,13 +30,13 @@ let server = createServer({
     port: config.bindInternalServerPort,
     motdMsg: `${Enums.ChatColor.RED}====== ${Enums.ChatColor.YELLOW}HAZARDCRAFT ${Enums.ChatColor.RED}======
 The most dangerous Eaglercraft server`,
-    favicon: readFileSync(path.join(__dirname, "server-icon.png")),
+    favicon: readFileSync(path.join(__dirname, "logo.png")),
     "online-mode": false,
     version: "1.8.9",
 }), sGlobals = {
     server: server,
     players: new Map(),
-    serverIcon: "server-icon.png"
+    serverIcon: readFileSync(path.join(__dirname, "logo.png"))
 };
 setSG(sGlobals);
 server.on("login", (client) => {

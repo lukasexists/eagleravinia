@@ -1,13 +1,13 @@
 {
-  "name": "eaglerproxy",
+  "name": "eagleravinia",
   "version": "1.0.0",
-  "description": "A flexible, easy expandable EaglercraftX 1.8.9 proxy written in TypeScript.",
-  "main": "launcher.js",
+  "description": "A heavily-modified version of EaglerProxy as an alternative to EaglerXBungee",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node build/index.js"
+    "test": "echo \"Bro what test?\" && exit 1",
+    "start": "node index.js"
   },
-  "author": "WorldEditAxe, q13x",
+  "author": "WorldEditAxe, q13x, ToasterPanic",
   "license": "MIT",
   "dependencies": {
     "@thi.ng/leb128": "^3.0.5",
