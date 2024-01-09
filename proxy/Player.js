@@ -261,7 +261,8 @@ export class Player extends EventEmitter {
                     else
                         this._kickMessage = packet.reason;
                     this._switchingServers = false;
-                    this.disconnect(this._kickMessage);
+                    console.log('KICKED FOR '+this._kickMessage)
+                    this.disconnect(this._kickMessage ?? "No reason given");
                 }
                 else if (meta.name == "disconnect") {
                     let json;
