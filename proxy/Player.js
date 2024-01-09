@@ -261,7 +261,7 @@ export class Player extends EventEmitter {
                     else
                         this._kickMessage = packet.reason;
                     this._switchingServers = false;
-                    console.log('KICKED FOR '+this._kickMessage)
+                    console.log(this._kickMessage ?? 'No reason given')
                     this.disconnect(this._kickMessage ?? "No reason given");
                 }
                 else if (meta.name == "disconnect") {
@@ -276,7 +276,8 @@ export class Player extends EventEmitter {
                     else
                         this._kickMessage = packet.reason;
                     this._switchingServers = false;
-                    this.disconnect(this._kickMessage);
+                    console.log(this._kickMessage ?? 'No reason given')
+                    this.disconnect(this._kickMessage ?? "No reason given");
                 }
                 if (!stream) {
                     if (switchingServers) {
