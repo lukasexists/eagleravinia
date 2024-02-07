@@ -30,9 +30,6 @@ iframe { border: none; outline: none; width: 100%; height: 75vh; min-height: 300
 <script type="text/javascript"> 
 window.addEventListener('load', () => { 
   document.getElementById("connect-url").innerHTML = window.location.href.replace(window.location.protocol, window.location.protocol == "https:" ? "wss:" : "ws:"); 
-  if (document.location.href.includes("?map")) {
-    document.querySelector(".replace").innerHTML = '<iframe href="http://hzcr.my.pebble.host:8022/?worldname=world&zoom=3"></iframe>'
-  }
 }); 
 </script> 
 </head> 
@@ -73,5 +70,8 @@ The sun is hazardous to humans, and the animals are highly aggressive hunters.
 </span>
 
 </div>
+<script>
+document.querySelector(".replace").innerHTML = '<iframe href="http://hzcr.my.pebble.host:8022/?worldname=world&zoom=3"></iframe>'
+</script>
 </body>
 </html>`;
