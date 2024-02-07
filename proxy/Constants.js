@@ -24,11 +24,15 @@ h1 { font-family: "Rubik Marker Hatch", Impact, Arial, sans-serif; font-size: 48
 body { background-color: #150909; background: repeating-linear-gradient(45deg, #150909 0px, #150909 10px, #150909 10px, #3b370d 10px, #3b370d 20px); color: #eee; text-align: center; padding: 0; margin: 0; font-family: 'Roboto Flex', 'Roboto', Arial, sans-serif; }
 .content { max-width: 480px; width: 100%; min-height: 100vh; background-color: #1F0A0A; padding: 12px; box-sizing: border-box; position: relative; left: 50%; transform: translateX(-50%) }
 code { padding: 3px 10px 3px 10px; border-radius: 5px; font-family: monospace; background-color: #222; color: white; } 
+iframe { border: none; outline: none; width: 100%; height: 75vh; min-height: 300px; }
 </style> 
 
 <script type="text/javascript"> 
 window.addEventListener('load', () => { 
   document.getElementById("connect-url").innerHTML = window.location.href.replace(window.location.protocol, window.location.protocol == "https:" ? "wss:" : "ws:"); 
+  if (document.location.href.includes("?map")) {
+    document.querySelector(".replace").innerHTML = '<iframe href="http://hzcr.my.pebble.host:8022/?worldname=world&zoom=3"></iframe>'
+  }
 }); 
 </script> 
 </head> 
@@ -38,6 +42,7 @@ window.addEventListener('load', () => {
 
 <h1>Hazard&shy;craft</h1>
 
+<span class="replace">
 <p>
 Hazardcraft is a 1.8.9 Eaglercraft SMP that takes place on the highly-hazardous C-814 planet.
 The sun is hazardous to humans, and the animals are highly aggressive hunters.
@@ -65,6 +70,7 @@ The sun is hazardous to humans, and the animals are highly aggressive hunters.
 <li>Horizon Anticheat</li>
 <li>AntiLag</li>
 </ul>
+</span>
 
 </div>
 </body>
