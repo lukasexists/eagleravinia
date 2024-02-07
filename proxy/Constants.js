@@ -44,9 +44,10 @@ window.addEventListener('load', () => {
 Hazardcraft is a 1.8.9 Eaglercraft SMP that takes place on the highly-hazardous C-814 planet.
 The sun is hazardous to humans, and the animals are highly aggressive hunters.
 </p> 
-<h2>Play at <code>wss://hazard.owouw.us/</code></h2>
+<h2>Play at <code id="connect-url">wss://hazard.owouw.us/</code></h2>
+<h3>JAVA EDITION: <code>hzcr.my.pebble.host</code></h3>
 <p style="color: gray; font-size: 12px;">To add this to your server list, go to Multiplayer > Add Server in your EaglercraftX 1.8.8 client and paste in the WSS URL above.</p>
-<p>Ravinia SMP members must message an admin to enter the SMP world.</p>
+<p>Private SMP members must message an admin to enter the SMP world.</p>
 
 <h2>Addon List</h2>
 
@@ -69,9 +70,8 @@ The sun is hazardous to humans, and the animals are highly aggressive hunters.
 </ul>
 </span>
 
+<h2><a href="http://hzcr.my.pebble.host:8022/?worldname=world&zoom=3">View the map</a></h2>
+<h2><a href="//hazardcraft.miraheze.org">View the wiki</a></h2>
 </div>
-<script>
-document.querySelector(".replace").innerHTML = '<iframe href="http://hzcr.my.pebble.host:8022/?worldname=world&zoom=3"></iframe>'
-</script>
 </body>
 </html>`;
