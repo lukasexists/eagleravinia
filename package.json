@@ -1,5 +1,5 @@
 {
-  "name": "eagleravinia",
+  "name": "eagleravinia-buildpos",
   "version": "1.0.0",
   "description": "A heavily-modified version of EaglerProxy as an alternative to EaglerXBungee",
   "main": "index.js",
