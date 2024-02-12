@@ -241,6 +241,10 @@ export async function onConnect(client) {
             text: " for a list of help commands.",
             color: "aqua",
           },
+          {
+            text: "DO NOT DO ANYTHING UNTIL YOU START GETTING CHAT MESSAGES!",
+            color: "red",
+          },
         ],
       });
       logger.info(
